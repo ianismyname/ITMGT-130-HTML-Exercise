@@ -1,0 +1,49 @@
+    h1 {
+        color:brown;
+        text-align: center;
+        font-family: Open Sans;
+        font-size: 80px
+      }
+    h2 {
+        color:white;
+        text-align: center;
+        font-family: Open Sans;
+        font-size: 80px
+      }
+  .logo {
+        height: 150px;
+      }
+  .picture {
+        height: 200px;
+      }
+  a {
+        color:#d49522;
+      }
+  body {
+        text-align: center;
+        background-color:#460000;
+        color:#d49522;
+      }
+      table{
+          color:brown;
+          align-content: center;
+          font-family: Open Sans;
+          font-size: 50px;
+        }
+
+  .footer {
+        padding: 10px;
+        text-align: center;
+        background: #ddd;
+      }
+  .center {
+        margin-left: auto;
+        margin-right: auto;
+  }
+  .menu {
+    color:brown;
+    text-align: center;
+    font-family: Open Sans;
+    word-spacing: 5px;
+    font-size: 50px;
+  }
