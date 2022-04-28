@@ -26,5 +26,10 @@ def three_number_average(x, y, z):
         the average of x, y, and z
     '''
     # Write your code below this line
-    print((x+y+z)/3)
-three_number_average(1, 2, 3)
+
+    result = ((x+y+z)/3)
+    return result
+
+
+
+print(three_number_average(1, 2, 3))
