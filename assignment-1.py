@@ -26,11 +26,11 @@ def factorial(x):
         the factorial of the argument
     '''
     # Write your code below this line
-    factorial=1
-    for i in range(1,x+1):
-        factorial= factorial*i
-    print("The factorial of the argument",x,"is",factorial)
-factorial(5)
+    if x==1:
+        return 1
+    else:
+        return (x * factorial(x-1))
+print("The factorial of the argument is "+ str(factorial(5)))
 
 def classify_grade(number_grade):
     '''Item 2.
@@ -57,22 +57,22 @@ def classify_grade(number_grade):
         the letter grade equivalent of the number grade.
     '''
     # Write your code below this line
+    if number_grade >=92 and number_grade <= 100:
+        return("A")
+    elif number_grade >=86 and number_grade <=91.9:
+        return("B+")
+    elif number_grade >=80 and number_grade <=85.9:
+        return("B")
+    elif number_grade >=74 and number_grade <=79.9:
+        return("C+")
+    elif number_grade >=67 and number_grade <=73.9:
+        return("C")
+    elif number_grade >=60 and number_grade <=66.9:
+        return("D")
+    elif number_grade >=0 and number_grade <=59.9:
+        return("F")
 number_grade = float(input("Enter Grade: "))
-if number_grade >=92 and number_grade <= 100:
-        print("A")
-elif number_grade >=86 and number_grade <=91.9:
-        print("B+")
-elif number_grade >=80 and number_grade <=85.9:
-        print("B")
-elif number_grade >=74 and number_grade <=79.9:
-        print("C+")
-elif number_grade >=67 and number_grade <=73.9:
-        print("C")
-elif number_grade >=60 and number_grade <=66.9:
-        print("D")
-elif number_grade >=0 and number_grade <=59.9:
-        print("F")
-
+print("The letter grade equivalent of the number grade is " + classify_grade(number_grade))
 
 def average_weight(item_quantity_1, item_weight_1, item_quantity_2, item_weight_2):
     '''Item 3.
@@ -100,6 +100,11 @@ def average_weight(item_quantity_1, item_weight_1, item_quantity_2, item_weight_
     '''
     # Write your code below this line
 
+    return (item_weight_1* item_quantity_1 + item_weight_2 * item_quantity_2)/(item_quantity_1+item_quantity_2)
+print ("The weighted average weight of one item is ")
+print (average_weight(1, 2, 3, 4))
+
+
 def string_sum(string):
     '''Item 4.
     String Sum. 3 points.
@@ -120,7 +125,18 @@ def string_sum(string):
         the sum of the digits contained in the string.
     '''
     # Write your code below this line
+    sum = 0
+    for i in string:
+        if i.isdigit() == True:
+            num = int(i)
+            sum = sum + num
+    return sum
+num = string_sum("123asd123")
+print(f" The sum of the digits contained in the string is {num}")
 
+
+
+import math
 def distance(x_1, y_1, x_2, y_2):
     '''Item 5.
     Distance. 3 points.
@@ -151,6 +167,14 @@ def distance(x_1, y_1, x_2, y_2):
         the distance between the two coordinates
     '''
     # Write your code below this line
+    diffX = x_1-x_2
+    diffY = y_1-y_2
+    sumXY = diffX+diffY
+    distanceXY= math.sqrt(sumXY)
+    return(float(sumXY))
+dist = distance(4,3,2,1)
+print(f" The distance between the two coordinates {dist}")
+
 
 def make_change(amount):
     '''Item 6.
@@ -175,3 +199,34 @@ def make_change(amount):
             "1P:{amount}/25C:{amount}/10C:{amount}/5C:{amount}/1C:{amount}"
     '''
     # Write your code below this line
+
+    diffChange = amount
+    countPeso = 0
+    count25 = 0
+    count10 = 0
+    count05 =0
+    count01 =0
+    if amount == 0:
+        return 0
+    while diffChange >= 1 :
+        countPeso += 1
+        diffChange -= 1
+
+    while diffChange >= .25:
+        count25 +=1
+        diffChange -=.25
+
+    while diffChange >= .10:
+        count10 +=1
+        diffChange -=.10
+
+    while diffChange >= .05:
+        count05 +=1
+        diffChange -=.05
+
+    while diffChange >= .01:
+        count01 +=1
+        diffChange -=.01
+
+    print(f"1P:{countPeso}/25C:{count25}/10C:{count10}/5C:{count05}/1C:{count01}")
+make_change(27.78)
